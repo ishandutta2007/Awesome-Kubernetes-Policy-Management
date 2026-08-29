@@ -42,65 +42,16 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## SaaS/Hosted Platforms
 
-
-
-- **[Kyverno Enterprise / Nirmata](https://nirmata.com/)**  
-
-  Commercial offerings and enterprise support around the popular Kubernetes-native policy engine Kyverno, adding management, multi-cluster capabilities, and support.
-
-
-
-- **[Kubewarden](https://www.kubewarden.io/)**  
-
-  Policy engine (with commercial support options) that runs WebAssembly policies, allowing policies written in multiple languages and distributed via OCI registries.
-
-
-
-- **[Styra DAS](https://www.styra.com/)**  
-
-  Enterprise policy management platform built on Open Policy Agent (OPA), providing centralized authorization and policy control across Kubernetes and other systems.
-
-
-
-- **[Fairwinds Insights](https://www.fairwinds.com/)**  
-
-  Kubernetes governance and security platform that combines configuration scanning, policy enforcement, and operational insights (building on open-source tools like Polaris).
-
-
-
-- **[Rancher / SUSE Rancher Manager](https://www.rancher.com/)**  
-
-  Kubernetes management platform that includes policy and security controls as part of multi-cluster management and governance.
-
-
-
-- **[Open Policy Agent Enterprise / Styra](https://www.styra.com/)**  
-
-  Commercial support, management planes, and enterprise features around the OPA ecosystem for large-scale policy deployment.
-
-
-
-- **[Tigera Calico Cloud](https://www.tigera.io/)**  
-
-  Enterprise network policy, security, and observability platform built on Calico, extending policy enforcement into networking and runtime.
-
-
-
-- **[Kubescape (ARMO Platform)](https://armosec.io/)**  
-
-  Commercial platform built around the open-source Kubescape project, offering multi-cluster security posture management, scanning, and compliance.
-
-
-
-- **[SUSE NeuVector](https://www.suse.com/products/neuvector/)**  
-
-  Full-lifecycle container security platform with policy enforcement, runtime protection, and network segmentation for Kubernetes.
-
-
-
-- **[Aqua Security](https://www.aquasec.com/)**  
-
-  Comprehensive cloud-native security platform that includes Kubernetes policy enforcement, admission control, runtime protection, and compliance scanning.
+| Product / Platform | Description | Starting Pricing | Free Tier / Trial Limits |
+| :--- | :--- | :--- | :--- |
+| **[Kyverno Enterprise / Nirmata](https://nirmata.com/)** | Enterprise governance, multi-cluster management plane, and SLA support for Kyverno policy engine. | **$1,250 / month** (Business plan covering up to 20 clusters or 250 nodes; additional capacity billed via tiered nodes) | **15-day free trial** with full enterprise features (also free up to 3 nodes via Kyverno Operator without license key) |
+| **[Fairwinds Insights](https://www.fairwinds.com/)** | Kubernetes governance and posture platform combining admission control, configuration validation (Polaris), and cost optimization. | **$100 / node / month** ($1,200 / node / year via AWS Marketplace EKS Edition) | **Free forever plan**: Up to 20 nodes, 2 clusters, 1 repository, unlimited users, and 30-day metric retention |
+| **[Kubescape / ARMO Platform](https://armosec.io/)** | Enterprise security platform built on CNCF Kubescape offering multi-cluster posture management, risk scoring, and runtime detection. | **$30 / worker node / month** (Startup plan covering automated scanning, RBAC analysis, and CI/CD integrations) | **Free forever plan**: 1 cluster and up to 50 worker nodes with continuous compliance scanning and risk analysis |
+| **[Tigera Calico Cloud](https://www.tigera.io/)** | Cloud-native network security, egress gateway controls, observability, and runtime policy enforcement for Kubernetes. | **$0.025 / vCPU-hour** (Pay-as-you-go; starts at **~$90 / month** for 5 vCPUs or **$180 / month** for 10 vCPUs on AWS Marketplace) | **Free forever tier**: 1 cluster for network observability and Policy Board; **14-day free trial** with full multi-cluster security |
+| **[Rancher / SUSE Rancher Prime](https://www.rancher.com/)** | Enterprise multi-cluster Kubernetes management platform with integrated policy management, RBAC, and governance. | **$25 / vCPU / month** via AWS Marketplace (or on-demand tiers starting at **$112 / node / month**) | **30-day free trial** on AWS Marketplace and SUSE Developer Access (core Rancher Manager is 100% free open-source) |
+| **[SUSE NeuVector Prime](https://www.suse.com/products/neuvector/)** | Full-lifecycle container and Kubernetes security platform with Zero-Trust network segmentation and runtime policy guardrails. | **$112 / node / month** (Marketplace entry tier for 5–15 nodes, 5-node minimum) | **Free open-source edition** (indefinite community use); **30-day enterprise evaluation** via Rancher Prime bundle |
+| **[Styra DAS / Enterprise OPA](https://www.styra.com/)** | Centralized control plane and policy lifecycle management for Open Policy Agent (OPA) and Kubernetes Gatekeeper. | **$1,000 / month** (Pro/Enterprise tier baseline supporting up to 50 managed nodes) | **Free forever tier**: Up to 2 clusters and 10 nodes with full OPA policy authoring and validation |
+| **[Aqua Security](https://www.aquasec.com/)** | Full cloud-native application protection platform (CNAPP) with Kubernetes admission controls, runtime protection, and policy scanning. | **~$4,166 / month** ($50,000 / year base commercial tier for enterprise workload packages; pay-per-scan marketplace options) | **14 to 30-day proof-of-concept trial** (available upon request/demo); free open-source scanning via Trivy |
 
 
 
