@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0a1128" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#326CE5" />
+      <stop offset="50%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#9d4edd" />
+    </linearGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#326CE5" />
+      <stop offset="50%" stop-color="#00b4d8" />
+      <stop offset="100%" stop-color="#7209b7" />
+    </linearGradient>
+
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D2FF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00D2FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#9d4edd" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="shieldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.4" />
+    </pattern>
+
+    <style>
+      .title {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 46px;
+        fill: #ffffff;
+        letter-spacing: -0.5px;
+      }
+      .subtitle {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        fill: #94a3b8;
+      }
+      .tagline {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        fill: #38bdf8;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .pill {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        fill: #e2e8f0;
+      }
+      
+      /* Dynamic Animations */
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.85; transform: scale(1.05); }
+      }
+      @keyframes scanline {
+        0% { transform: translateY(0px); opacity: 0; }
+        30% { opacity: 0.7; }
+        70% { opacity: 0.7; }
+        100% { transform: translateY(380px); opacity: 0; }
+      }
+      @keyframes orbit {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes dashMove {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      .pulse-bg {
+        transform-origin: 1000px 190px;
+        animation: pulseGlow 6s ease-in-out infinite;
+      }
+      .scanner {
+        animation: scanline 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      .floating-shield {
+        transform-origin: 1000px 190px;
+        animation: floatSlow 4s ease-in-out infinite;
+      }
+      .rotating-ring {
+        transform-origin: 1000px 190px;
+        animation: orbit 24s linear infinite;
+      }
+      .rotating-ring-reverse {
+        transform-origin: 1000px 190px;
+        animation: orbit 18s linear infinite reverse;
+      }
+      .animated-dash {
+        stroke-dasharray: 8 6;
+        animation: dashMove 10s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="380" fill="url(#bgGrad)" rx="16" />
+  <rect width="1200" height="380" fill="url(#grid)" rx="16" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="1000" cy="190" r="140" fill="#326CE5" opacity="0.15" filter="url(#glow)" class="pulse-bg" />
+  <circle cx="200" cy="80" r="100" fill="#9d4edd" opacity="0.1" filter="url(#glow)" />
+  <circle cx="600" cy="300" r="120" fill="#00D2FF" opacity="0.08" filter="url(#glow)" />
+
+  <!-- Dynamic Scanner Bar -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#laserGrad)" class="scanner" />
+
+  <!-- Left Content Area -->
+  <g transform="translate(80, 0)">
+    <!-- Category Tag -->
+    <g transform="translate(0, 75)">
+      <rect x="0" y="0" width="280" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <circle cx="15" cy="15" r="5" fill="#00D2FF" filter="url(#glow)" />
+      <text x="30" y="20" class="tagline">Cloud-Native Security</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="155" class="title">Awesome Kubernetes</text>
+    <text x="0" y="210" class="title" fill="url(#accentGrad)">Policy Management ⚡</text>
+
+    <!-- Subtitle / Meta -->
+    <text x="0" y="255" class="subtitle">Curated Policy-as-Code, Admission Control &amp; Guardrails Ecosystem</text>
+
+    <!-- Feature Badges / Pills -->
+    <g transform="translate(0, 285)">
+      <!-- Pill 1: Kyverno -->
+      <g transform="translate(0, 0)">
+        <rect width="105" height="32" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2" />
+        <text x="52" y="21" text-anchor="middle" class="pill">☸️ Kyverno</text>
+      </g>
+
+      <!-- Pill 2: OPA / Gatekeeper -->
+      <g transform="translate(115, 0)">
+        <rect width="145" height="32" rx="16" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2" />
+        <text x="72" y="21" text-anchor="middle" class="pill">🛡️ OPA Gatekeeper</text>
+      </g>
+
+      <!-- Pill 3: Kubewarden -->
+      <g transform="translate(270, 0)">
+        <rect width="135" height="32" rx="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.2" />
+        <text x="67" y="21" text-anchor="middle" class="pill">🕸️ Kubewarden</text>
+      </g>
+
+      <!-- Pill 4: Kubescape -->
+      <g transform="translate(415, 0)">
+        <rect width="125" height="32" rx="16" fill="#1e293b" stroke="#10b981" stroke-width="1.2" />
+        <text x="62" y="21" text-anchor="middle" class="pill">🔍 Kubescape</text>
+      </g>
+
+      <!-- Pill 5: Calico & NeuVector -->
+      <g transform="translate(550, 0)">
+        <rect width="150" height="32" rx="16" fill="#1e293b" stroke="#ec4899" stroke-width="1.2" />
+        <text x="75" y="21" text-anchor="middle" class="pill">🚀 Zero-Trust Guard</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Graphic Area (Interactive Shield + Kubernetes Helm + Policy Rings) -->
+  <g transform="translate(1000, 190)" class="floating-shield">
+    <!-- Outer Orbiting Ring -->
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.4" class="animated-dash rotating-ring" />
+    <circle cx="110" cy="0" r="5" fill="#00D2FF" filter="url(#glow)" class="rotating-ring" />
+    <circle cx="-110" cy="0" r="4" fill="#a855f7" filter="url(#glow)" class="rotating-ring" />
+
+    <!-- Inner Orbiting Ring -->
+    <circle cx="0" cy="0" r="85" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.5" class="animated-dash rotating-ring-reverse" />
+    <circle cx="0" cy="85" r="4.5" fill="#38bdf8" filter="url(#glow)" class="rotating-ring-reverse" />
+
+    <!-- Security Shield Background -->
+    <path d="M 0 -65 L 55 -35 L 55 25 C 55 60 0 85 0 85 C 0 85 -55 60 -55 25 L -55 -35 Z" 
+          fill="url(#shieldGrad)" opacity="0.25" filter="url(#shieldGlow)" />
+    
+    <!-- Security Shield Body -->
+    <path d="M 0 -60 L 50 -32 L 50 22 C 50 54 0 76 0 76 C 0 76 -50 54 -50 22 L -50 -32 Z" 
+          fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+
+    <!-- Kubernetes / Policy Symbol Inside Shield -->
+    <!-- K8s Wheel Center -->
+    <circle cx="0" cy="0" r="12" fill="#326CE5" filter="url(#glow)" />
+    <circle cx="0" cy="0" r="6" fill="#ffffff" />
+    
+    <!-- 7 Spokes of Kubernetes Helm with Policy Nodes -->
+    <g stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round">
+      <line x1="0" y1="-12" x2="0" y2="-28" />
+      <line x1="11" y1="-5" x2="25" y2="-12" />
+      <line x1="11" y1="5" x2="25" y2="12" />
+      <line x1="5" y1="11" x2="11" y2="26" />
+      <line x1="-5" y1="11" x2="-11" y2="26" />
+      <line x1="-11" y1="5" x2="-25" y2="12" />
+      <line x1="-11" y1="-5" x2="-25" y2="-12" />
+    </g>
+
+    <!-- Policy Checkmark Glow -->
+    <path d="M -12 36 L -3 45 L 14 26" fill="none" stroke="#10b981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" />
+  </g>
+
+  <!-- Bottom Accent Border -->
+  <rect x="0" y="374" width="1200" height="6" fill="url(#accentGrad)" rx="3" />
+</svg>
